@@ -3,7 +3,7 @@
 ![in](https://img.shields.io/badge/Made%20with%20%F0%9F%92%97%20in%20-INDIA-green) ![l](https://img.shields.io/github/license/thisisthedarshan/quit) ![ak](https://kotlin.link/awesome-kotlin.svg)  [![Build Status](https://travis-ci.com/thisisthedarshan/quit.svg?branch=master)](https://travis-ci.com/thisisthedarshan/quit)
 <!---[![Codacy Badge](https://app.codacy.com/project/badge/Grade/857b4ed9798942bcac8386c9bbd356ef)](https://www.codacy.com/manual/thisisthedarshan/quit?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=thisisthedarshan/quit&amp;utm_campaign=Badge_Grade)-->
 
-<img src="./images/quit_feature_graphic.png" alt="header" height="300"/>
+![header](./images/quit_feature_graphic.png)
 
 Project **Quit** is the first of its kind habit monitoring software designed to understand the user's mobile usage patterns.
 
