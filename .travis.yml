@@ -1,12 +1,12 @@
 language: android
-jdk: oraclejdk8
 android:
   components:
     # Update Android SDK Tools
+    
+    - build-tools-19.0.3
+    - $ANDROID_TARGET
+    - sys-img-armeabi-v7a-$ANDROID_TARGET
     - tools
-    - build-tools-29.0.3
-    - android-29
-    - sys-img-armeabi-v7a-android-26
     - platform-tools
 
     # Support library
