@@ -1,4 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2020. by Darshan. All rights reserved
+  ~
+  ~ The file "AndroidManifest.xml" is a part of the project "Quit"
+  ~
+  ~     Quit is free software: you can redistribute it and/or modify
+  ~     it under the terms of the GNU General Public License as published by
+  ~     the Free Software Foundation, either version 3 of the License, or
+  ~     (at your option) any later version.
+  ~
+  ~     Project Quit is distributed in the hope that it will be useful,
+  ~     but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~     GNU General Public License for more details.
+  ~
+  ~     You should have received a copy of the GNU General Public License
+  ~     along with Project Quit.  If not, see <https://www.gnu.org/licenses/>.
+  -->
+
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.aztekstudios.quit">
@@ -29,16 +48,21 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup">
+        <!-- Activity to handle Profile Making -->
         <activity android:name=".ui.ProfileMaker" />
+
+        <!-- Activity to Intoduction -->
         <activity
             android:name=".ui.Launchpad"
             android:theme="@style/AppTheme.Launch" />
 
+        <!-- Service that manages everything -->
         <service
             android:name=".services.MyMonitor"
             android:enabled="true"
             android:exported="false" />
 
+        <!-- Splash Activity ! -->
         <activity
             android:name=".ui.SplashScreen"
             android:theme="@style/AppTheme.Launch">
@@ -48,11 +72,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Home Screen -->
         <activity
             android:name=".ui.Home"
             android:label="@string/title_activity_home"
             android:screenOrientation="sensorPortrait"
             android:theme="@style/AppTheme.NoActionBar" />
+
+        <!--    Boot Complete Receiver    -->
+        <receiver android:name=".broadcasts.BootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
