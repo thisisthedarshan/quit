@@ -5,7 +5,7 @@
 
 ![header](./images/quit_header.png)
 
-Project **Quit** is the first of its kind habit monitoring software designed to understand the user's mobile usage patters.
+Project **Quit** is the first of its kind habit monitoring software designed to understand the user's mobile usage patterns.
 
 It uses various services and functions to obtain and process the device usage patterns. It then labels the user accordingly.
 
