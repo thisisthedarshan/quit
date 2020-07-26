@@ -78,8 +78,8 @@ class Launchpad : AppIntro2() {
 
     override fun onSkipPressed(currentFragment: Fragment?) {
         super.onSkipPressed(currentFragment)
-        fin()
-        //startActivity(Intent(this, Home::class.java))
+        //fin()
+        startActivity(Intent(this, Home::class.java))
         finish()
     }
 
