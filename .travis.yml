@@ -32,11 +32,10 @@ before_script:
 
 script:
   - ./gradlew build check
-  - if [ -e ./gradlew ]; then ./gradlew jacocoTestReport;else gradle jacocoTestReport;fi
   - bash <(curl -s https://codecov.io/bash)
 
 after_success:
-    - codecov
+    - codecov -t 43491081-a94f-4ce6-8688-5724d791ae79
 
 #after_success:
 #  - bash <(curl -s https://codecov.io/bash) -t 43491081-a94f-4ce6-8688-5724d791ae79
