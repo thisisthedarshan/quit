@@ -51,7 +51,7 @@
         <!-- Activity to handle Profile Making -->
         <activity android:name=".ui.ProfileMaker" />
 
-        <!-- Activity to Intoduction -->
+        <!-- Activity to Introduction -->
         <activity
             android:name=".ui.Launchpad"
             android:theme="@style/AppTheme.Launch" />
