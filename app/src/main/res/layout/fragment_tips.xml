@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/viewBackground"
+    android:background="?attr/fragmentCol"
     android:orientation="vertical"
     android:padding="@dimen/dimen_28"
     android:theme="@style/AppTheme.QuoteTheme"
@@ -33,7 +33,7 @@
             android:layout_gravity="center"
             android:text="@string/dummy"
             android:textAlignment="viewEnd"
-            android:textColor="@color/trypan_blue"
+            android:textColor="?attr/fragmentInv"
             android:textSize="21sp"
             tools:ignore="RtlCompat" />
 
