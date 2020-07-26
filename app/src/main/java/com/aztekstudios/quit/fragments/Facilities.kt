@@ -28,16 +28,24 @@ class Facilities : Fragment() {
         timeCounter.text = timeoutDefault.toString()
         seekTimeout.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-                // Not much to do here
+                var p = 5
+                if (progress > 5) {
+                    p = progress
+                }
+                if (progress < 5) {
+                    seekBar?.progress = 5
+                }
+                timeCounter.text = p.toString()
+                // set values
+                pref.write(C.PREF_TIMEOUT, p.toString())
             }
 
             override fun onStartTrackingTouch(seekBar: SeekBar?) {
-                timeCounter.text = seekBar?.progress.toString()
+                // Not much to do here
             }
 
             override fun onStopTrackingTouch(seekBar: SeekBar?) {
-                // set values
-                pref.write(C.PREF_TIMEOUT, seekBar!!.progress.toString())
+                // Not much to do here
             }
 
         })

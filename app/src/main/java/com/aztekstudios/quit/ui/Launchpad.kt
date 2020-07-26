@@ -55,7 +55,7 @@ class Launchpad : AppIntro2() {
         )
 
         // Set in immersive mode
-        setImmersiveMode()
+        //setImmersiveMode() // Blocking UI
         // Fade the screens!!!!!!
         setTransformer(AppIntroPageTransformerType.Fade)
         // Some other settings
@@ -72,19 +72,24 @@ class Launchpad : AppIntro2() {
         addSlide(f4)
         // Final Login info slide
         addSlide(f5)
+
     }
 
     override fun onSkipPressed(currentFragment: Fragment?) {
         super.onSkipPressed(currentFragment)
-        //startActivity(Intent(this, ProfileMaker::class.java))
-        startActivity(Intent(this, Home::class.java))
+        fin()
+        //startActivity(Intent(this, Home::class.java))
         finish()
     }
 
     override fun onDonePressed(currentFragment: Fragment?) {
         super.onDonePressed(currentFragment)
-        startActivity(Intent(this, ProfileMaker::class.java))
+        fin()
         finish()
+    }
+
+    fun fin() {
+        startActivity(Intent(this, ProfileMaker::class.java))
     }
 
     override fun onSlideChanged(oldFragment: Fragment?, newFragment: Fragment?) {

@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import com.aztekstudios.quit.R
@@ -21,18 +22,29 @@ import com.google.android.gms.tasks.Task
 
 class Login : Fragment() {
 
-    lateinit var client: GoogleSignInClient
+    private lateinit var client: GoogleSignInClient
+    private lateinit var gso: GoogleSignInOptions
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         val root = inflater.inflate(R.layout.fragment_login, container, false)
         val signInButton = root.findViewById<SignInButton>(R.id.signIn)
-        val gso =
-            GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestEmail()
-                .build()
-        client = GoogleSignIn.getClient(requireContext(), gso)
+        try {
+            gso =
+                GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                    .requestEmail()
+                    .build()
+        } catch (e: Exception) {
+            Toast.makeText(requireContext(), "Error building sign-in option", Toast.LENGTH_SHORT)
+                .show()
+        }
+        try {
+            client = GoogleSignIn.getClient(requireContext(), gso)
+        } catch (e: Exception) {
+            Toast.makeText(requireContext(), "Error building client option", Toast.LENGTH_SHORT)
+                .show()
+        }
         signInButton.setOnClickListener {
             val signInIntent: Intent = client.signInIntent
             startActivityForResult(signInIntent, C.SIGN_IN_CODE)

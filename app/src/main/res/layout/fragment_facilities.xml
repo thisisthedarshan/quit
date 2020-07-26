@@ -40,7 +40,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/toolTV1"
-                android:layout_marginTop="@dimen/dimen_9" />
+                android:layout_marginTop="@dimen/dimen_9"
+                android:max="45" />
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
     <!-- TODO Add new setting features like daily notifications, motivational quotes and periodic recommendations -->

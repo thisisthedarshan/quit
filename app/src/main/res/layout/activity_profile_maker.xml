@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     tools:context=".ui.ProfileMaker">
 
-    <androidx.fragment.app.FragmentContainerView
+    <FrameLayout
         android:id="@+id/containerProfileMaker"
         android:name="com.aztekstudios.quit.fragments.Login"
         android:layout_width="match_parent"
