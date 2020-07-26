@@ -25,9 +25,7 @@ Support Me by donating.
 
 ## Screenshots
 
-<img src="./images/PhoneScreenshot1.jpg" alt="s1" width="200"/>
-<img src="./images/PhoneScreenshot2.jpg" alt="s1" width="200"/>
-<img src="./images/PhoneScreenshot3.jpg" alt="s1" width="200"/>
+<img src="./images/PhoneScreenshot1.jpg" alt="s1" width="200"/> <img src="./images/PhoneScreenshot2.jpg" alt="s1" width="200"/> <img src="./images/PhoneScreenshot3.jpg" alt="s1" width="200"/>
 
 ## License
 
