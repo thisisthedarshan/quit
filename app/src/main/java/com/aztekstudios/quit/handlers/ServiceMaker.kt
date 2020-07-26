@@ -8,7 +8,7 @@ import com.aztekstudios.quit.services.MyMonitor
 import com.aztekstudios.quit.util.Helper
 
 class ServiceMaker {
-    fun makeService(c: Context) {
+    fun bake(c: Context) {
         if (Helper().checkServiceAlive(c, MyMonitor::class.java).not()) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 ContextCompat.startForegroundService(c, Intent(c, MyMonitor::class.java))
