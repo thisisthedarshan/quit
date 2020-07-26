@@ -6,7 +6,7 @@ android:
     - tools
     - build-tools-29.0.3
     - android-29
-    - sys-img-x86-android-26
+    - sys-img-armeabi-v7a-android-26
     - platform-tools
 
     # Support library
@@ -15,7 +15,7 @@ android:
     - extra-google-google_play_services
 env:
   matrix:
-    - ANDROID_TARGET=android-19  ANDROID_ABI=armeabi-v7a
+    - ANDROID_TARGET=android-26  ANDROID_ABI=armeabi-v7a
 before_script:
   - echo no | android create avd --force -n test -t $ANDROID_TARGET --abi $ANDROID_ABI
   - emulator -avd test -no-skin -no-audio -no-window &
