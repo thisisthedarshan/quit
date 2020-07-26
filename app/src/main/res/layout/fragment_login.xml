@@ -7,6 +7,7 @@
     android:backgroundTint="#E6F8E8E8"
     android:backgroundTintMode="multiply"
     android:padding="@dimen/dimen_21"
+    android:theme="@style/AppTheme.Launch"
     tools:context=".fragments.Login">
 
     <LinearLayout
