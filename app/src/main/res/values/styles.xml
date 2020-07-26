@@ -1,0 +1,74 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="customBackground">@drawable/navbar</item>
+        <item name="viewBackground">@color/blue_grotto</item>
+        <item name="customColor">@color/princeton_orange</item>
+        <item name="colHighlight">@color/white</item>
+        <item name="fragmentCol">@color/white</item>
+        <item name="fragmentBck">@drawable/frag_day</item>
+        <item name="fragmentInv">@color/black</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.Launch" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="AppTheme.HeaderTextStyle" parent="Widget.MaterialComponents.TextView">
+        <item name="fontFamily">@font/teko_bold</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/dimen_21</item>
+    </style>
+
+    <style name="AppTheme.ThemeNav" parent="Widget.Design.NavigationView">
+        <item name="itemIconTint">@color/menu_itm_col</item>
+        <item name="itemTextColor">@color/menu_itm_col</item>
+        <item name="itemBackground">@drawable/menu_itm_state</item>
+    </style>
+
+    <style name="AppTheme.MenuTheme" parent="Widget.Design.NavigationView">
+        <item name="fontFamily">@font/righteous</item>
+        <item name="android:textSize">@dimen/dimen_15</item>
+    </style>
+
+    <style name="AppTheme.BarTheme">
+        <item name="fontFamily">@font/russo_one</item>
+        <item name="titleTextColor">@color/white</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="AppTheme.QuoteTheme">
+        <item name="fontFamily">@font/bad_script</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="AppTheme.HomeTextStyle">
+        <item name="fontFamily">@font/russo_one</item>
+    </style>
+
+    <style name="AppTheme.HomeTextStyle2">
+        <item name="fontFamily">@font/teko_bold</item>
+    </style>
+
+    <style name="AppTheme.HomeTextStyle3">
+        <item name="fontFamily">@font/righteous</item>
+    </style>
+
+    <style name="AppTheme.DialogTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+</resources>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.IntroMake">
+
+    <!-- For some decent looks, we use ImageView as background-->
+    <ImageView
+        android:id="@+id/introBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/image"
+        android:scaleType="centerCrop" />
+
+    <TextView
+        android:id="@+id/introTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="36dp"
+        android:padding="@dimen/dimen_9"
+        android:text="@string/dummy"
+        android:textAlignment="center"
+        android:textSize="36sp" />
+
+    <ImageView
+        android:id="@+id/introImage"
+        android:layout_width="63sp"
+        android:layout_height="63sp"
+        android:layout_centerInParent="true"
+        android:contentDescription="@string/image"
+        android:src="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/introDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/dimen_108"
+        android:padding="@dimen/dimen_9"
+        android:text="@string/dummy"
+        android:textAlignment="center"
+        android:textSize="@dimen/dimen_18" />
+
+
+</RelativeLayout>

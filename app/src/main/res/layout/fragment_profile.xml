@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/fragmentBck"
+    tools:context=".fragments.Profile"
+    tools:ignore="SpUsage,RelativeOverlap">
+
+    <RelativeLayout
+        android:id="@+id/profileHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:id="@+id/profileColBcg"
+            android:layout_width="match_parent"
+            android:layout_height="74sp"
+            android:background="@color/princeton_orange_alpha" />
+
+        <com.aztekstudios.quit.models.CircularImageView
+            android:id="@+id/profilePicture"
+            android:layout_width="108sp"
+            android:layout_height="108sp"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="74sp"
+            android:src="@mipmap/ic_launcher"
+            app:civ_border_width="1sp"
+            app:civ_circle_color="@color/white" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/profileName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150sp"
+        android:text="@string/nav_header_title"
+        android:textAlignment="center"
+        android:textColor="@color/timberwolf"
+        android:textSize="@dimen/dimen_28"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/profileDes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/profileName"
+        android:text="@string/dummy"
+        android:textAlignment="center"
+        android:textColor="?attr/colHighlight"
+        android:textSize="@dimen/dimen_18" />
+    <!--<TextView
+        android:id="@+id/profileType"
+        android:layout_below="@id/profileDes"
+        android:paddingTop="@dimen/dimen_9"
+        android:text="@string/dummy"
+        android:textSize="18sp"
+        android:textAlignment="center"
+        android:textColor="@color/deep_jungle_green"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>-->
+    <RelativeLayout
+        android:id="@+id/specsProfile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/profileDes"
+        android:layout_marginTop="@dimen/dimen_24"
+        android:padding="@dimen/dimen_9">
+
+        <TextView
+            android:id="@+id/unlockCountProfileTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/unlocked_times_profile"
+            android:textColor="?attr/fragmentInv"
+            android:textSize="@dimen/dimen_18" />
+
+        <TextView
+            android:id="@+id/unlockCountProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:text="@string/dummy"
+            android:textColor="?attr/colHighlight"
+            android:textSize="@dimen/dimen_18" />
+
+        <TextView
+            android:id="@+id/usageCountProfileTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/unlockCountProfileTxt"
+            android:layout_marginTop="@dimen/dimen_12"
+            android:text="@string/usage_times_profile"
+            android:textColor="?attr/fragmentInv"
+            android:textSize="@dimen/dimen_18" />
+
+        <TextView
+            android:id="@+id/usageCountProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/unlockCountProfileTxt"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/dimen_12"
+            android:text="@string/dummy"
+            android:textColor="?attr/colHighlight"
+            android:textSize="@dimen/dimen_18" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/typeIndicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/specsProfile"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="@dimen/dimen_21"
+        android:text="@string/current_status"
+        android:textColor="?attr/fragmentInv" />
+
+    <TextView
+        android:id="@+id/currentStatusProfile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/typeIndicator"
+        android:layout_marginTop="@dimen/dimen_18"
+        android:text="@string/dummy"
+        android:textAlignment="center"
+        android:textColor="@color/old_gold"
+        android:textSize="@dimen/dimen_21"
+        android:textStyle="bold" />
+</RelativeLayout>

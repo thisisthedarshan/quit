@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragments.Facilities">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dimen_18"
+        app:cardCornerRadius="@dimen/dimen_9"
+        app:cardUseCompatPadding="true">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dimen_9">
+
+            <TextView
+                android:id="@+id/toolTV1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/set_rest_alert"
+                tools:ignore="RelativeOverlap" />
+
+            <TextView
+                android:id="@+id/timeoutCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/dimen_9"
+                android:text="15"
+                tools:ignore="HardcodedText" />
+
+            <SeekBar
+                android:id="@+id/seekTimeout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/toolTV1"
+                android:layout_marginTop="@dimen/dimen_9" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+    <!-- TODO Add new setting features like daily notifications, motivational quotes and periodic recommendations -->
+
+</LinearLayout>

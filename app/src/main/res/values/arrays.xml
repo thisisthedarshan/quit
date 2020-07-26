@@ -1,0 +1,19 @@
+<resources>
+    <!--    Strings that represent professions  -->
+    <string-array name="professions">
+        <item>Defence</item>
+        <item>Farmer</item>
+        <item>Student</item>
+        <item>Teacher</item>
+        <item>Office Worker</item>
+        <item>Clerk</item>
+        <item>Technician</item>
+        <item>IT Service</item>
+        <item>Service Provider</item>
+        <item>Government Job</item>
+        <item>Civil Administration</item>
+        <item>Advocate</item>
+        <item>Engineer</item>
+        <item>Others</item>
+    </string-array>
+</resources>

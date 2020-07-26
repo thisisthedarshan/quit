@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "307824728699",
+    "firebase_url": "https://project-quit.firebaseio.com",
+    "project_id": "project-quit",
+    "storage_bucket": "project-quit.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:307824728699:android:7f642f4eb9a4237745e0de",
+        "android_client_info": {
+          "package_name": "com.aztekstudios.quit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "307824728699-l7sdkjjns8dj116ot5ji8di8tndvrv6c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.aztekstudios.quit",
+            "certificate_hash": "087c1e8c9a2d90b176644810c52e5cdf8aa6b670"
+          }
+        },
+        {
+          "client_id": "307824728699-98rbbtrpi6dmq18algjp1mu5q9fdapej.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNUcBEI8Z20qUv6XbFY-2cVQkvjJ-QbW0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "307824728699-98rbbtrpi6dmq18algjp1mu5q9fdapej.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

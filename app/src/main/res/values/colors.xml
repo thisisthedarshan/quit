@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#1C2541</color>
+    <color name="colorPrimaryDark">#0B132B</color>
+    <color name="colorAccent">#FFB6C1</color>
+    <!--<color name="colorAccent">#C1189B</color>-->
+    <!--    Custom Colors   -->
+    <color name="french_lilac">#8D5A97</color>
+    <color name="mountbatten_pink">#907F9F</color>
+    <color name="femine_pink">#FFB6C1</color>
+    <color name="candy_pink">#E77983</color>
+    <color name="silver_metallic">#A4A5AE</color>
+    <color name="opal">#B0C7BD</color>
+    <color name="magic_mint">#B8EBD0</color>
+    <color name="tiffany_blue">#59CEE0</color>
+    <color name="blue_grotto">#2692D0</color>
+    <color name="aqua">#47D8E0</color>
+    <color name="royal_blue">#1848A0</color>
+    <color name="grey">#5A5A5A</color>
+    <color name="spanish_grey">#9C9C9C</color>
+    <color name="white">#FFFFFF</color>
+    <color name="dark_cyan">#0F8B8D</color>
+    <color name="orange_pantone">#F75C03</color>
+    <color name="timberwolf">#DEDBD8</color>
+    <color name="midnight_blue">#07004D</color>
+    <color name="han_purple">#9A3826FF</color>
+    <color name="bdazzled_blue">#2E5CA5</color>
+    <color name="bdazzled_blue_a1">#A12E5CA5</color>
+    <color name="light_sea_green">#2EA39D</color>
+    <color name="yellow_green_color_wheel">#00A400</color>
+    <color name="castleton_green">#005E46</color>
+    <color name="spring_bud_green">#A2FF00</color>
+    <color name="trypan_blue">#0300C0</color>
+    <color name="deep_jungle_green">#045051</color>
+    <color name="citrine">#DDD725</color>
+    <color name="lemon">#FFFB00</color>
+    <color name="princeton_orange">#EF7C1D</color>
+    <color name="princeton_orange_alpha">#CEEF7C1D</color>
+    <color name="duke_blue">#1F009B</color>
+    <color name="starcommand_blue">#0080BF</color>
+    <color name="pacafic_blue">#00A1BF</color>
+    <color name="maximum_blue_green">#00BFBD</color>
+    <color name="starcommand_blue_a">#990080BF</color>
+    <color name="pacafic_blue_a">#9900A1BF</color>
+    <color name="maximum_blue_green_a">#9900BFBD</color>
+    <color name="tiffany_blue_alpha">#CE59CEE0</color>
+    <color name="candy_pink_alpha">#80E77983</color>
+    <color name="old_gold">#CFB53B</color>
+    <!--    Shades of Black -->
+    <color name="black">#000000</color>
+    <color name="rich_black">#0B0A0A</color>
+    <color name="smokey_black">#151313</color>
+    <color name="eerie_black">#201D1D</color>
+    <color name="raisin_black">#2B2726</color>
+    <color name="davys_grey">#5B5B5B</color>
+
+    <color name="transparent">#00FFFFFF</color>
+
+</resources>

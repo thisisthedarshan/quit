@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:padding="@dimen/dimen_9"
+    tools:context=".fragments.Progress">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="UselessParent">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/progressheader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_24"
+                android:layout_marginBottom="@dimen/dimen_12"
+                android:text="@string/progress_header"
+                android:textColor="?attr/customColor"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/seperator_progress"
+                android:layout_width="match_parent"
+                android:layout_height="2sp"
+                android:layout_below="@id/progressheader"
+                android:contentDescription="@string/image"
+                android:tint="@color/royal_blue"
+                app:srcCompat="@drawable/line"
+                tools:ignore="SmallSp" />
+
+            <TextView
+                android:id="@+id/progress_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/seperator_progress"
+                android:layout_marginTop="@dimen/dimen_12"
+                android:layout_marginBottom="@dimen/dimen_12"
+                android:text="@string/dummy"
+                android:textAlignment="center"
+                android:textColor="@color/deep_jungle_green" />
+
+            <ImageView
+                android:id="@+id/seperator_progress2"
+                android:layout_width="match_parent"
+                android:layout_height="2sp"
+                android:layout_below="@id/progress_type"
+                android:contentDescription="@string/image"
+                android:tint="@color/royal_blue"
+                app:srcCompat="@drawable/line"
+                tools:ignore="SmallSp" />
+
+            <TextView
+                android:id="@+id/progressTimeUsed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/seperator_progress2"
+                android:layout_marginTop="@dimen/dimen_24"
+                android:text="@string/time_used_progress"
+                android:textColor="?attr/customColor"
+                android:textSize="@dimen/dimen_18" />
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/graphUsage"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_200"
+                android:layout_below="@id/progressTimeUsed" />
+
+            <TextView
+                android:id="@+id/progressTimeUnlocked"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/graphUsage"
+                android:layout_marginTop="@dimen/dimen_18"
+                android:text="@string/times_unlocked_progress"
+                android:textColor="?attr/customColor"
+                android:textSize="@dimen/dimen_18" />
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/graphUnlocked"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_200"
+                android:layout_below="@id/progressTimeUnlocked" />
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

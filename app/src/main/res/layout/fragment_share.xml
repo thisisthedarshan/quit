@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/fragmentBck"
+    android:padding="@dimen/dimen_21"
+    tools:context=".fragments.Share">
+
+    <TextView
+        android:id="@+id/share_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_21"
+        android:text="@string/share_frag"
+        android:textColor="@color/femine_pink"
+        android:textSize="@dimen/dimen_21"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/share_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/share_title"
+        android:layout_marginTop="@dimen/dimen_9"
+        android:text="@string/share_message"
+        android:textColor="@color/lemon"
+        android:theme="@style/AppTheme.HomeTextStyle2" />
+
+    <Button
+        android:id="@+id/share_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/share_message"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="@dimen/dimen_18"
+        android:background="@drawable/button_background"
+        android:drawableStart="@drawable/ic_share"
+        android:drawablePadding="@dimen/dimen_9"
+        android:drawableTint="?attr/fragmentInv"
+        android:padding="@dimen/dimen_9"
+        android:text="@string/menu_share"
+        android:textColor="?attr/fragmentInv"
+        android:textSize="@dimen/dimen_18"
+        android:textStyle="bold"
+        android:theme="@style/AppTheme.HomeTextStyle" />
+
+    <TextView
+        android:id="@+id/share_support_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/share_button"
+        android:layout_marginTop="@dimen/dimen_21"
+        android:text="@string/support_us"
+        android:textColor="@color/femine_pink"
+        android:textSize="@dimen/dimen_21"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/share_support_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/share_support_title"
+        android:text="@string/support_message"
+        android:textColor="@color/lemon"
+        android:theme="@style/AppTheme.HomeTextStyle2" />
+
+</RelativeLayout>

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/dimen_9"
+    tools:context=".fragments.HomeFragment"
+    tools:ignore="SmallSp,SpUsage">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/homeCard1"
+        android:layout_width="150sp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:cardCornerRadius="@dimen/dimen_15"
+        app:cardUseCompatPadding="true">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/viewBackground"
+            android:padding="@dimen/dimen_9"
+            android:theme="@style/AppTheme.HomeTextStyle">
+
+            <RelativeLayout
+                android:id="@+id/homeContainer2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingStart="3sp"
+                android:paddingTop="3sp"
+                android:paddingEnd="3sp">
+
+                <ImageView
+                    android:id="@+id/homeTimeIcon"
+                    android:layout_width="@dimen/dimen_15"
+                    android:layout_height="@dimen/dimen_15"
+                    android:contentDescription="@string/image"
+                    app:srcCompat="@drawable/ic_time" />
+
+                <TextView
+                    android:id="@+id/homeTimeUsageText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_6"
+                    android:layout_toEndOf="@id/homeTimeIcon"
+                    android:text="@string/time_used"
+                    android:textColor="?attr/fragmentCol"
+                    android:textSize="13dp" />
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/divider1Home"
+                android:layout_width="match_parent"
+                android:layout_height="21sp"
+                android:layout_below="@id/homeContainer2"
+                android:contentDescription="@string/image"
+                android:paddingTop="@dimen/dimen_9"
+                android:paddingBottom="@dimen/dimen_9"
+                app:srcCompat="@drawable/line" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/divider1Home">
+
+                <TextView
+                    android:id="@+id/usageTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text="@string/dummy"
+                    android:textColor="?attr/fragmentCol"
+                    android:textSize="27sp" />
+
+                <TextView
+                    android:id="@+id/usageTimeOutOf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/usageTime"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="3sp"
+                    android:text="@string/dummy"
+                    android:textColor="?attr/fragmentCol"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/homeCard2"
+        android:layout_width="150sp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        app:cardCornerRadius="@dimen/dimen_15"
+        app:cardUseCompatPadding="true">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/viewBackground"
+            android:padding="@dimen/dimen_9"
+            android:theme="@style/AppTheme.HomeTextStyle">
+
+            <RelativeLayout
+                android:id="@+id/homeContainer4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingStart="3sp"
+                android:paddingTop="3sp"
+                android:paddingEnd="3sp">
+
+                <ImageView
+                    android:id="@+id/homeUnlockIcon"
+                    android:layout_width="@dimen/dimen_15"
+                    android:layout_height="@dimen/dimen_15"
+                    android:contentDescription="@string/image"
+                    app:srcCompat="@drawable/ic_unlock" />
+
+                <TextView
+                    android:id="@+id/homeUnlockTimeText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_6"
+                    android:layout_toEndOf="@id/homeUnlockIcon"
+                    android:text="@string/times_unlocked"
+                    android:textColor="?attr/fragmentCol"
+                    android:textSize="13dp" />
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/divider2Home"
+                android:layout_width="match_parent"
+                android:layout_height="21sp"
+                android:layout_below="@id/homeContainer4"
+                android:contentDescription="@string/image"
+                android:paddingTop="@dimen/dimen_9"
+                android:paddingBottom="@dimen/dimen_9"
+                app:srcCompat="@drawable/line" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/divider2Home">
+
+                <TextView
+                    android:id="@+id/unlockTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text="@string/dummy"
+                    android:textColor="?attr/fragmentCol"
+                    android:textSize="27sp" />
+
+                <TextView
+                    android:id="@+id/unlockTimeOutOf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/unlockTime"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="3sp"
+                    android:text="@string/dummy"
+                    android:textColor="?attr/fragmentCol"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

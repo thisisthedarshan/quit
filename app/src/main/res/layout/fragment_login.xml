@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_screen"
+    android:backgroundTint="#E6F8E8E8"
+    android:backgroundTintMode="multiply"
+    android:padding="@dimen/dimen_21"
+    tools:context=".fragments.Login">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="30sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/login1"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dimen_28"
+            android:theme="@style/AppTheme.HomeTextStyle3" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="30sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/login2"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dimen_18"
+            android:theme="@style/AppTheme.HomeTextStyle2" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="50sp" />
+    </LinearLayout>
+
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/signIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="@dimen/dimen_28" />
+
+</RelativeLayout>
