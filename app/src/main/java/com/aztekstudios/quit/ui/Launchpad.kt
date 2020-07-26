@@ -5,6 +5,7 @@ import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
 import android.provider.Settings
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.aztekstudios.quit.R
 import com.aztekstudios.quit.fragments.IntroMake
@@ -102,6 +103,8 @@ class Launchpad : AppIntro2() {
 
     private fun requestStatsPermission() {
         if (Helper().tryGetPermission(this)) {
+            Toast.makeText(applicationContext, R.string.toast_grant_permission, Toast.LENGTH_LONG)
+                .show()
             val intent = Intent(Settings.ACTION_USAGE_ACCESS_SETTINGS)
             startActivity(intent)
         }
@@ -109,6 +112,8 @@ class Launchpad : AppIntro2() {
 
     private fun requestOverlayPermission() {
         if (!Settings.canDrawOverlays(this)) {
+            Toast.makeText(applicationContext, R.string.toast_grant_permission, Toast.LENGTH_LONG)
+                .show()
             val intent = Intent(
                 Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
                 Uri.parse("package:$packageName")

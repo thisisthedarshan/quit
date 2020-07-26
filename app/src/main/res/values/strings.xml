@@ -70,5 +70,6 @@
     <string name="description_unlocks">Unlock Statistics</string>
     <!-- Toast strings  -->
     <string name="toast_profile_incomplete">Some contents seem to be not set. Please check the form and try again.</string>
+    <string name="toast_grant_permission">Search for Quit and click the switch</string>
 
 </resources>

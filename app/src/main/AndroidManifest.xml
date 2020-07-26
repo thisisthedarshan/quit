@@ -30,7 +30,9 @@
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup">
         <activity android:name=".ui.ProfileMaker" />
-        <activity android:name=".ui.Launchpad" />
+        <activity
+            android:name=".ui.Launchpad"
+            android:theme="@style/AppTheme.Launch" />
 
         <service
             android:name=".services.MyMonitor"
@@ -39,7 +41,7 @@
 
         <activity
             android:name=".ui.SplashScreen"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+            android:theme="@style/AppTheme.Launch">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
