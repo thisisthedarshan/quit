@@ -19,9 +19,15 @@ The features of the app include:
 
 ## Support
 
-Support Me by donation.
+Support Me by donating.
 
  [![liberapay](https://img.shields.io/badge/-Support-0F7816?logo=liberapay)](https://liberapay.com/darshan/donate) [![paypal](https://img.shields.io/badge/-Support-0F7816?logo=paypal)](https://paypal.me/thisisdarshan)
+
+## Screenshots
+
+<img src="./images/PhoneScreenshot1.jpg" alt="s1" width="200"/>
+<img src="./images/PhoneScreenshot2.jpg" alt="s1" width="200"/>
+<img src="./images/PhoneScreenshot3.jpg" alt="s1" width="200"/>
 
 ## License
 
