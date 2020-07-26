@@ -81,7 +81,10 @@
             android:theme="@style/AppTheme.NoActionBar" />
 
         <!--    Boot Complete Receiver    -->
-        <receiver android:name=".broadcasts.BootReceiver">
+        <receiver
+            android:name=".broadcasts.BootReceiver"
+            android:enabled="true"
+            android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
