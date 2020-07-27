@@ -57,6 +57,8 @@ class DataManager(cx: Context) {
 
     /**
      * Update Unlock counts into database
+     * @param key Key of data to write
+     * @param data Data to be written
      */
     fun update(key: String, data: String) {
 
@@ -96,6 +98,7 @@ class DataManager(cx: Context) {
 
     /**
      * Update Usage counts into database
+     * @param t Delay long value in millis
      */
     fun updateUsage(t: Long) {
 
