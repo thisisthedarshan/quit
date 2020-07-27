@@ -94,6 +94,9 @@ class DataManager(cx: Context) {
         write(C.PREF_LASTSAVED, date)
     }
 
+    /**
+     * Update Usage counts into database
+     */
     fun updateUsage(t: Long) {
 
         val date = Helper().getDateToday()                    // Get today's date
