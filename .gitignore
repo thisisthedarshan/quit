@@ -15,3 +15,5 @@
 .cxx
 *.aab
 *.apk
+.idea/copyright/FOSS.xml
+.idea/copyright/profiles_settings.xml
