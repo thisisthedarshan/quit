@@ -125,7 +125,7 @@ class DataManager(cx: Context) {
                         timeTemp + t
                     )                                                                               // get hours from temporarily stored long timing
                 }
-            d[d.lastIndex] = timeTotal.toString()                                                   // Last index has our latest data. Update it
+            d[d.lastIndex] = String.format("%.2f",timeTotal)                                         // Last index has our latest data. Update it
             write(C.PREF_USAGE, Solver().listToString(d.toList()))                                  // Write the data back into database
             write(C.PREF_TIME_TEMP, (timeTemp + t).toString())                                      // Add last temp time and new time difference and update the temp time into database
         }
@@ -133,14 +133,14 @@ class DataManager(cx: Context) {
         // New Day !
         else if (lastReadParam != date && lastReadParam != "0") {
             write(C.PREF_TIME_TYPE, C.TIME_TYPE_MINS)                                               // Because it's a new day, timing starts in minutes. Write that type in database
-            val d = read(C.PREF_USAGE) + "," + Solver().getTime(TimeUnit.MINUTES, t).toString() // Add the new data into the database
+            val d = read(C.PREF_USAGE) + "," + String.format("%.2f",Solver().getTime(TimeUnit.MINUTES, t)) // Add the new data into the database
             write(C.PREF_USAGE, d)                                                                  // Write the new value to database
             write(C.PREF_TIME_TEMP, t.toString())                                                   // Write the new temp time to database  - this temp time is our new delay
         }
 
         // Completely New !
         else {
-            write(C.PREF_USAGE, Solver().getTime(TimeUnit.MINUTES, t).toString())                   // It is a new system. Write the data to database directly
+            write(C.PREF_USAGE, String.format("%.2f",Solver().getTime(TimeUnit.MINUTES, t)))         // It is a new system. Write the data to database directly
             write(C.PREF_TIME_TYPE, C.TIME_TYPE_MINS)                                               // New type always starts in minutes
             write(C.PREF_TIME_TEMP, t.toString())                                                   // Write the new temp time
         }
