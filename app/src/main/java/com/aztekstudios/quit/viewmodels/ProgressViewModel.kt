@@ -40,23 +40,23 @@ class ProgressViewModel : ViewModel() {
      * @return BarDataSet of usage statistics
      */
     fun usageBarData(c: Context): BarDataSet {
-        val list: MutableList<BarEntry> = ArrayList()                           // Array List for recording entries
-        val pref = DataManager(c)                                               // DataManager Class instance
-        val list1 = Solver().stringToList(pref.read(C.PREF_USAGE))  // List of Usage Statistics
+        val usageList: MutableList<BarEntry> = ArrayList()                           // Array List for recording entries
+        val prefM = DataManager(c)                                               // DataManager Class instance
+        val prefUnlocksList = Solver().stringToList(prefM.read(C.PREF_USAGE))  // List of Usage Statistics
         when {                                                                  // We want only last 7 values, so this work.
-            list1.size > 7 -> {
-                var x = list1.lastIndex - 7
-                for (y in 0..6) {
-                    val data = list1[x].toFloat()
-                    list.add(BarEntry(y.toFloat(), data))
-                    x++
+            prefUnlocksList.size > 7 -> {
+                var a = prefUnlocksList.lastIndex - 7
+                for (b in 0..6) {
+                    val data = prefUnlocksList[a].toFloat()
+                    usageList.add(BarEntry(b.toFloat(), data))
+                    a++
                 }
             }
-            list1.size <= 7 -> {
-                var pos = 0f
-                for (d in list1) {
-                    list.add(BarEntry(pos, d.toFloat()))
-                    pos++
+            prefUnlocksList.size <= 7 -> {
+                var pos1 = 0f
+                for (d in prefUnlocksList) {
+                    usageList.add(BarEntry(pos1, d.toFloat()))
+                    pos1++
                 }
             }
         }
@@ -73,10 +73,10 @@ class ProgressViewModel : ViewModel() {
         )
 
         // Generate BarDataSet
-        val barSet = BarDataSet(list, "UsageStatistics")    // Generate BarDataSet
-        barSet.colors = colors.toMutableList()                    // Set color
+        val usageStatsBar = BarDataSet(usageList, "UsageStatistics")    // Generate BarDataSet
+        usageStatsBar.colors = colors.toMutableList()                    // Set color
 
-        return barSet                                             // Return the dataset
+        return usageStatsBar                                             // Return the dataset
     }
 
     /**
@@ -85,23 +85,23 @@ class ProgressViewModel : ViewModel() {
      * @return BarDataSet of unlocks statistics
      */
     fun unlocksBarData(c: Context): BarDataSet {
-        val list: MutableList<BarEntry> = ArrayList()                               // Array List for recording entries
-        val pref = DataManager(c)                                                   // DataManager Class instance
-        val list1 = Solver().stringToList(pref.read(C.PREF_UNLOCKS))    // List of Unlocks Statistics
+        val unlocksList: MutableList<BarEntry> = ArrayList()                               // Array List for recording entries
+        val prefMan = DataManager(c)                                                   // DataManager Class instance
+        val prefsUnlockList = Solver().stringToList(prefMan.read(C.PREF_UNLOCKS))    // List of Unlocks Statistics
         when {                                                                      // We want only last 7 values, so this work.
-            list1.size > 7 -> {
-                var x = list1.lastIndex - 7
-                for (y in 0..6) {
-                    val data = list1[x].toFloat()
-                    list.add(BarEntry(y.toFloat(), data))
-                    x++
+            prefsUnlockList.size > 7 -> {
+                var e = prefsUnlockList.lastIndex - 7
+                for (d in 0..6) {
+                    val data = prefsUnlockList[e].toFloat()
+                    unlocksList.add(BarEntry(d.toFloat(), data))
+                    e++
                 }
             }
-            list1.size <= 7 -> {
-                var pos = 0f
-                for (d in list1) {
-                    list.add(BarEntry(pos, d.toFloat()))
-                    pos++
+            prefsUnlockList.size <= 7 -> {
+                var pos2 = 0f
+                for (d in prefsUnlockList) {
+                    unlocksList.add(BarEntry(pos2, d.toFloat()))
+                    pos2++
                 }
             }
         }
@@ -116,8 +116,8 @@ class ProgressViewModel : ViewModel() {
             Helper().generateRandomColor(),
             Helper().generateRandomColor()
         )
-        val barSet = BarDataSet(list, "UnlockStatistics")   // Generate BarDataSet
-        barSet.colors = colors.toMutableList()                    // Set color
-        return barSet                                             // Return the dataset
+        val unlockStatsBar = BarDataSet(unlocksList, "UnlockStatistics")   // Generate BarDataSet
+        unlockStatsBar.colors = colors.toMutableList()                    // Set color
+        return unlockStatsBar                                             // Return the dataset
     }
 }
