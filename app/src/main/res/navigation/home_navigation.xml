@@ -2,7 +2,7 @@
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   ~     Copyright (c) 2020. by Darshan. All rights reserved                                                 ~
   ~                                                                                                         ~
-  ~     The file "activity_splash_screen.xml" is a part of the project "Quit"                               ~
+  ~     The file "home_navigation.xml" is a part of the project "Quit"                                      ~
   ~                                                                                                         ~
   ~     Quit is free software: you can redistribute it and/or modify                                        ~
   ~     it under the terms of the GNU General Public License as published by                                ~
@@ -19,19 +19,51 @@
   ~                                                                                                         ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.SplashScreen">
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/nav_home">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="72sp"
-        android:layout_centerInParent="true"
-        android:contentDescription="@string/splash"
-        app:srcCompat="@drawable/quit_header" />
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.aztekstudios.quit.fragments.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/nav_progress"
+        android:name="com.aztekstudios.quit.fragments.Progress"
+        android:label="@string/menu_progress"
+        tools:layout="@layout/fragment_progress" />
+    <fragment
+        android:id="@+id/nav_facilities"
+        android:name="com.aztekstudios.quit.fragments.Facilities"
+        android:label="@string/menu_facilities"
+        tools:layout="@layout/fragment_facilities" />
+    <fragment
+        android:id="@+id/nav_tips"
+        android:name="com.aztekstudios.quit.fragments.Tips"
+        android:label="@string/menu_tips"
+        tools:layout="@layout/fragment_tips" />
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.aztekstudios.quit.fragments.Profile"
+        android:label="@string/menu_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/nav_policies"
+        android:name="com.aztekstudios.quit.fragments.Policies"
+        android:label="@string/menu_policies"
+        tools:layout="@layout/fragment_policies" />
+    <fragment
+        android:id="@+id/nav_about"
+        android:name="com.aztekstudios.quit.fragments.About"
+        android:label="@string/menu_about"
+        tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/nav_share"
+        android:name="com.aztekstudios.quit.fragments.Share"
+        android:label="@string/menu_share"
+        tools:layout="@layout/fragment_share" />
 
-</RelativeLayout>
+</navigation>

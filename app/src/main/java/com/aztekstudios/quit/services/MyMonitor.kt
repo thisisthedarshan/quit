@@ -1,3 +1,23 @@
+/************************************************************************************************************
+ *     Copyright (c) 2020. by Darshan. All rights reserved                                                  *
+ *                                                                                                          *
+ *     The file "MyMonitor.kt" is a part of the project "Quit"                                              *
+ *                                                                                                          *
+ *     Quit is free software: you can redistribute it and/or modify                                         *
+ *     it under the terms of the GNU General Public License as published by                                 *
+ *     the Free Software Foundation, either version 3 of the License, or                                    *
+ *     (at your option) any later version.                                                                  *
+ *                                                                                                          *
+ *     Project Quit is distributed in the hope that it will be useful,                                      *
+ *     but WITHOUT ANY WARRANTY; without even the implied warranty of                                       *
+ *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the                                        *
+ *     GNU General Public License for more details.                                                         *
+ *                                                                                                          *
+ *     You should have received a copy of the GNU General Public License                                    *
+ *     along with Project Quit.  If not, see <https://www.gnu.org/licenses/>.                               *
+ *                                                                                                          *
+ ************************************************************************************************************/
+
 package com.aztekstudios.quit.services
 
 import android.annotation.SuppressLint
@@ -87,7 +107,7 @@ class MyMonitor : Service() {
      * Tidy-up the mess ;)
      */
     override fun onDestroy() {
-        ServiceMaker().makeService(applicationContext)
+        ServiceMaker().bake(applicationContext)
         deregisterReceivers()
         if (completeDisposable.isDisposed.not()) {
             completeDisposable.dispose()
@@ -191,7 +211,7 @@ class MyMonitor : Service() {
      */
     private fun stopObserver() {
         if (appMonDisposable != null && appMonDisposable?.isDisposed?.not() == true) {
-            appMonDisposable?.dispose()
+            appMonDisposable?.dispose() // Dispose the object
         }
         finishMonitorUsage()
     }
@@ -206,7 +226,7 @@ class MyMonitor : Service() {
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe {
-                showPopup()
+                showPopup()     // It has been some time. Show the popup
             }
     }
 
@@ -215,7 +235,7 @@ class MyMonitor : Service() {
      */
     private fun stopPopups() {
         if (popupDisposable != null && popupDisposable?.isDisposed?.not() == true) {
-            popupDisposable?.dispose()
+            popupDisposable?.dispose()  // Dispose the popup object
             //Toast.makeText(applicationContext,"Stopped Popup service",Toast.LENGTH_SHORT).show()
         }
     }
@@ -242,15 +262,13 @@ class MyMonitor : Service() {
                     WindowManager.LayoutParams.FLAG_WATCH_OUTSIDE_TOUCH,
             PixelFormat.OPAQUE
         )
-        /**
-         * For older versions, we set the type from WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY to WindowManager.LayoutParams.TYPE_SYSTEM_ALERT
-         */
+
+        // For older versions, we set the type from WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY to WindowManager.LayoutParams.TYPE_SYSTEM_ALERT
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
             params.type = WindowManager.LayoutParams.TYPE_SYSTEM_ALERT
         }
-        /**
-         * Get instance of the WindowManager and Layout inflater
-         */
+
+        //Get instance of the WindowManager and Layout inflater
         val wm =
             getSystemService(Context.WINDOW_SERVICE) as WindowManager
         val inflater =
@@ -258,25 +276,27 @@ class MyMonitor : Service() {
         val d: View = inflater.inflate(R.layout.activity_pop_up, null)
         // Add layout to window manager
         val messageText =
-            "It has been more than $timeoutPopup minutes since you have been using the device. Why not take some rest?"
+            "It has been more than $timeoutPopup minutes since you have been using the device. Why not take some rest?" // Message
+        // Get quote
         val quoteTemp = QuoteFactory().getRandomQuote()
-        val quote = Solver().justGetTheQuote(quoteTemp)
+        val quote = Solver().getTheQuote(quoteTemp)
         val author = Solver().getAuthorFromQuote(quoteTemp)
+        // Find Views
         val quoteText = d.findViewById<TextView>(R.id.quote)
         val quoteAuthor = d.findViewById<TextView>(R.id.author)
         val messageView = d.findViewById<TextView>(R.id.messagePopup)
         val okButton = d.findViewById<Button>(R.id.okPopup)
+        // Set values
         quoteAuthor!!.text = author
         quoteText!!.text = quote
         messageView!!.text = messageText
         okButton!!.setOnClickListener {
-            wm.removeView(d)
+            wm.removeView(d) // remove the view wen button is pressed
         }
         // Set gravity
         params.gravity = Gravity.CENTER_HORIZONTAL or Gravity.CENTER_VERTICAL
-        /**
-         * Show the popup window.
-         */
+
+        //Show the popup window.
         wm.addView(d, params)
     }
 
@@ -292,11 +312,12 @@ class MyMonitor : Service() {
      */
     private fun finishMonitorUsage() {
         //Toast.makeText(applicationContext, "Package = $appPkg", Toast.LENGTH_SHORT).show() // Debugging
+
         if (usageTime > 0 /*&& appPkg.isEmpty().not()*/) { // Making sure that the application was actually used !
 
-            val uTime = SystemClock.elapsedRealtime() - usageTime
-            val dataManager = DataManager(baseContext)
-            dataManager.updateUsage(uTime) // Automatically decides the type.
+            val uTime = SystemClock.elapsedRealtime() - usageTime        // Calculate delay
+            val dataManager = DataManager(baseContext)                          // DataManager Instance
+            dataManager.updateUsage(uTime)                                      // Automatically decides the type and write it to database.
 
             // Other methods
             //Toast.makeText(applicationContext, "Total usage = $uTime", Toast.LENGTH_SHORT).show()

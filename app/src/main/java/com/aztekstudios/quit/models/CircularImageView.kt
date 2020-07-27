@@ -1,3 +1,23 @@
+/************************************************************************************************************
+ *     Copyright (c) 2020. by Darshan. All rights reserved                                                  *
+ *                                                                                                          *
+ *     The file "CircularImageView.kt" is a part of the project "Quit"                                      *
+ *                                                                                                          *
+ *     Quit is free software: you can redistribute it and/or modify                                         *
+ *     it under the terms of the GNU General Public License as published by                                 *
+ *     the Free Software Foundation, either version 3 of the License, or                                    *
+ *     (at your option) any later version.                                                                  *
+ *                                                                                                          *
+ *     Project Quit is distributed in the hope that it will be useful,                                      *
+ *     but WITHOUT ANY WARRANTY; without even the implied warranty of                                       *
+ *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the                                        *
+ *     GNU General Public License for more details.                                                         *
+ *                                                                                                          *
+ *     You should have received a copy of the GNU General Public License                                    *
+ *     along with Project Quit.  If not, see <https://www.gnu.org/licenses/>.                               *
+ *                                                                                                          *
+ ************************************************************************************************************/
+
 package com.aztekstudios.quit.models
 
 import android.content.Context
@@ -15,12 +35,18 @@ import com.aztekstudios.quit.R
 import kotlin.math.min
 import kotlin.math.roundToInt
 
+/**
+ * Class to create a Circular Image View
+ */
 class CircularImageView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
 ) : AppCompatImageView(context, attrs, defStyleAttr) {
 
+    /**
+     * Companion Objects
+     */
     companion object {
         private const val DEFAULT_BORDER_WIDTH = 4f
         private const val DEFAULT_SHADOW_RADIUS = 8.0f
@@ -112,7 +138,7 @@ class CircularImageView @JvmOverloads constructor(
             }
             update()
         }
-    //endregion
+
 
     // Color Filter
     private var civColorFilter: ColorFilter? = null
@@ -134,6 +160,9 @@ class CircularImageView @JvmOverloads constructor(
         init(context, attrs, defStyleAttr)
     }
 
+    /**
+     * Initialise and set attributes
+     */
     private fun init(context: Context, attrs: AttributeSet?, defStyleAttr: Int) {
         // Load the styled attributes and set their properties
         val attributes =
@@ -189,9 +218,8 @@ class CircularImageView @JvmOverloads constructor(
 
         attributes.recycle()
     }
-    //endregion
 
-    //region Set Attr Method
+    //Set Attr Method
     override fun setColorFilter(colorFilter: ColorFilter?) {
         civColorFilter = colorFilter
     }
@@ -211,9 +239,9 @@ class CircularImageView @JvmOverloads constructor(
         }
         super.setScaleType(scaleType)
     }
-    //endregion
 
-    //region Draw Method
+
+    //Draw Method
     override fun onDraw(canvas: Canvas) {
         // Load the bitmap
         loadBitmap()
@@ -234,6 +262,7 @@ class CircularImageView @JvmOverloads constructor(
                 paintShadow
             )
         }
+
         // Draw Border
         canvas.drawCircle(
             circleCenterWithBorder,
@@ -241,6 +270,7 @@ class CircularImageView @JvmOverloads constructor(
             circleCenterWithBorder - margeWithShadowRadius,
             paintBorder
         )
+
         // Draw Circle background
         canvas.drawCircle(
             circleCenterWithBorder,
@@ -248,6 +278,7 @@ class CircularImageView @JvmOverloads constructor(
             circleCenter - margeWithShadowRadius,
             paintBackground
         )
+
         // Draw CircularImageView
         canvas.drawCircle(
             circleCenterWithBorder,
@@ -257,6 +288,9 @@ class CircularImageView @JvmOverloads constructor(
         )
     }
 
+    /**
+     * Update the view
+     */
     private fun update() {
         if (civImage != null)
             updateShader()
@@ -274,6 +308,9 @@ class CircularImageView @JvmOverloads constructor(
         invalidate()
     }
 
+    /**
+     * Manage Circle color
+     */
     private fun manageCircleColor() {
         paintBackground.shader = createLinearGradient(
             circleColorStart ?: circleColor,
@@ -281,6 +318,9 @@ class CircularImageView @JvmOverloads constructor(
         )
     }
 
+    /**
+     * Manage Circle border color
+     */
     private fun manageBorderColor() {
         val borderColor = if (borderWidth == 0f) circleColor else this.borderColor
         paintBorder.shader = createLinearGradient(
@@ -289,15 +329,18 @@ class CircularImageView @JvmOverloads constructor(
         )
     }
 
+    /**
+     * Create a Linear gradient
+     */
     private fun createLinearGradient(
         startColor: Int,
         endColor: Int,
         gradientDirection: GradientDirection
     ): LinearGradient {
-        var x0 = 0f
-        var y0 = 0f
-        var x1 = 0f
-        var y1 = 0f
+        var x0 = 0f    // Default values
+        var y0 = 0f    // Default values
+        var x1 = 0f    // Default values
+        var y1 = 0f    // Default values
         when (gradientDirection) {
             GradientDirection.LEFT_TO_RIGHT -> x1 = width.toFloat()
             GradientDirection.RIGHT_TO_LEFT -> x0 = width.toFloat()
@@ -307,6 +350,9 @@ class CircularImageView @JvmOverloads constructor(
         return LinearGradient(x0, y0, x1, y1, startColor, endColor, Shader.TileMode.CLAMP)
     }
 
+    /**
+     * Manage Elevation of the view
+     */
     private fun manageElevation() {
         outlineProvider = if (!shadowEnable) object : ViewOutlineProvider() {
             override fun getOutline(view: View?, outline: Outline?) {
@@ -317,6 +363,9 @@ class CircularImageView @JvmOverloads constructor(
         }
     }
 
+    /**
+     * Load the bitmap into view
+     */
     private fun loadBitmap() {
         if (civDrawable == drawable) return
 
@@ -325,11 +374,15 @@ class CircularImageView @JvmOverloads constructor(
         updateShader()
     }
 
+    /**
+     * Check when size is changed
+     */
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
         super.onSizeChanged(w, h, oldw, oldh)
         update()
     }
 
+    // Draw shadows
     private fun drawShadow() {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.P) {
             setLayerType(View.LAYER_TYPE_SOFTWARE, paintShadow)
@@ -351,6 +404,7 @@ class CircularImageView @JvmOverloads constructor(
         paintShadow.setShadowLayer(shadowRadius, dx, dy, shadowColor)
     }
 
+    // Update the shader
     private fun updateShader() {
         civImage?.also {
             // Create Shader
@@ -374,6 +428,7 @@ class CircularImageView @JvmOverloads constructor(
         }
     }
 
+    // Crop the image in center
     private fun centerCrop(bitmap: Bitmap, viewSize: Int): Matrix =
         Matrix().apply {
             val scale: Float
@@ -392,6 +447,7 @@ class CircularImageView @JvmOverloads constructor(
             postTranslate(dx, dy)
         }
 
+    // CenterInside the given image
     private fun centerInside(bitmap: Bitmap, viewSize: Int): Matrix =
         Matrix().apply {
             val scale = if (bitmap.width <= viewSize && bitmap.height <= viewSize) {
@@ -407,6 +463,7 @@ class CircularImageView @JvmOverloads constructor(
             postTranslate(dx, dy)
         }
 
+    // Center the image
     private fun fitCenter(bitmap: Bitmap, viewSize: Int): Matrix =
         Matrix().apply {
             setRectToRect(
@@ -416,6 +473,7 @@ class CircularImageView @JvmOverloads constructor(
             )
         }
 
+    // Convert the drawable to bitmap
     private fun drawableToBitmap(drawable: Drawable?): Bitmap? =
         drawable?.let {
             if (drawable is VectorDrawable) {
@@ -428,6 +486,7 @@ class CircularImageView @JvmOverloads constructor(
             }
         }
 
+    // Vector to bitmap
     private fun VectorDrawable.vectorDrawableToBitmap(): Bitmap {
         // Generate max bitmap size from view when is vector drawable
         // no when scale type is CENTER_INSIDE
@@ -442,6 +501,7 @@ class CircularImageView @JvmOverloads constructor(
         return bitmap
     }
 
+    // BitmapDrawable to bitmap
     private fun BitmapDrawable.bitmapDrawableToBitmap(): Bitmap =
         bitmap.let {
             Bitmap.createScaledBitmap(
@@ -452,6 +512,7 @@ class CircularImageView @JvmOverloads constructor(
             )
         }
 
+    // Drawable to Bitmap
     private fun Drawable.toBitmap(): Bitmap? =
         try {
             // Create Bitmap object out of the drawable
@@ -468,9 +529,9 @@ class CircularImageView @JvmOverloads constructor(
             e.printStackTrace()
             null
         }
-    //endregion
 
-    //region Measure Method
+
+    //Measure Method
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         val usableWidth = measure(widthMeasureSpec) - (paddingLeft + paddingRight)
         val usableHeight = measure(heightMeasureSpec) - (paddingTop + paddingBottom)
@@ -487,8 +548,8 @@ class CircularImageView @JvmOverloads constructor(
             else -> heightCircle // The parent has not imposed any constraint on the child.
         }
     }
-    //endregion
 
+    // Convert to shadow gravity
     private fun Int.toShadowGravity(): ShadowGravity =
         when (this) {
             1 -> ShadowGravity.CENTER
@@ -499,6 +560,7 @@ class CircularImageView @JvmOverloads constructor(
             else -> throw IllegalArgumentException("This value is not supported for ShadowGravity: $this")
         }
 
+    // Convert to gradient
     private fun Int.toGradientDirection(): GradientDirection =
         when (this) {
             1 -> GradientDirection.LEFT_TO_RIGHT

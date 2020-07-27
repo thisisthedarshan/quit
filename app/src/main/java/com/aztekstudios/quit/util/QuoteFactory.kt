@@ -1,14 +1,41 @@
+/************************************************************************************************************
+ *     Copyright (c) 2020. by Darshan. All rights reserved                                                  *
+ *                                                                                                          *
+ *     The file "QuoteFactory.kt" is a part of the project "Quit"                                           *
+ *                                                                                                          *
+ *     Quit is free software: you can redistribute it and/or modify                                         *
+ *     it under the terms of the GNU General Public License as published by                                 *
+ *     the Free Software Foundation, either version 3 of the License, or                                    *
+ *     (at your option) any later version.                                                                  *
+ *                                                                                                          *
+ *     Project Quit is distributed in the hope that it will be useful,                                      *
+ *     but WITHOUT ANY WARRANTY; without even the implied warranty of                                       *
+ *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the                                        *
+ *     GNU General Public License for more details.                                                         *
+ *                                                                                                          *
+ *     You should have received a copy of the GNU General Public License                                    *
+ *     along with Project Quit.  If not, see <https://www.gnu.org/licenses/>.                               *
+ *                                                                                                          *
+ ************************************************************************************************************/
+
 package com.aztekstudios.quit.util
 
 import kotlin.random.Random
 
+/**
+ * A method to generate random quotes
+ */
 class QuoteFactory {
+    /**
+     * Returns a randomly generated quote from the quotes list
+     * @return Quote
+     */
     fun getRandomQuote(): String {
-        return quotes[Random.nextInt(quotes.size)]
+        return quotes[Random.nextInt(quotes.size)] // Random quote is generated using random function
     }
 
     /**
-     * Quotes go here
+     * Quotes go here. New ones can be added
      */
     private val quotes = arrayOf(
         "Health is the greatest gift, contentment the greatest wealth, faithfulness the best relationship.  ~Buddha",

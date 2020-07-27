@@ -1,3 +1,23 @@
+/************************************************************************************************************
+ *     Copyright (c) 2020. by Darshan. All rights reserved                                                  *
+ *                                                                                                          *
+ *     The file "Launchpad.kt" is a part of the project "Quit"                                              *
+ *                                                                                                          *
+ *     Quit is free software: you can redistribute it and/or modify                                         *
+ *     it under the terms of the GNU General Public License as published by                                 *
+ *     the Free Software Foundation, either version 3 of the License, or                                    *
+ *     (at your option) any later version.                                                                  *
+ *                                                                                                          *
+ *     Project Quit is distributed in the hope that it will be useful,                                      *
+ *     but WITHOUT ANY WARRANTY; without even the implied warranty of                                       *
+ *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the                                        *
+ *     GNU General Public License for more details.                                                         *
+ *                                                                                                          *
+ *     You should have received a copy of the GNU General Public License                                    *
+ *     along with Project Quit.  If not, see <https://www.gnu.org/licenses/>.                               *
+ *                                                                                                          *
+ ************************************************************************************************************/
+
 package com.aztekstudios.quit.ui
 
 import android.content.Intent
@@ -13,16 +33,22 @@ import com.aztekstudios.quit.util.Helper
 import com.github.appintro.AppIntro2
 import com.github.appintro.AppIntroPageTransformerType
 
+/**
+ * Class that shows the introduction activity. This class extends AppIntro2 class for showing custom fragments.
+ * Read more at the library's wiki on github
+ */
 class Launchpad : AppIntro2() {
-    // Fragments are defined here. This is so that we can request permissions. Maybe , can we customize them even more ?
-    lateinit var f1: IntroMake
-    lateinit var f2: IntroMake
-    lateinit var f3: IntroMake
-    lateinit var f4: IntroMake
-    lateinit var f5: IntroMake
+
+    // Fragment variables are defined here. This is so that we can request permissions. Maybe , can we customize them even more ?
+    private lateinit var f1: IntroMake
+    private lateinit var f2: IntroMake
+    private lateinit var f3: IntroMake
+    private lateinit var f4: IntroMake
+    private lateinit var f5: IntroMake
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         // Define the fragments here
         f1 = IntroMake.newInstance(
             "Welcome",
@@ -57,42 +83,51 @@ class Launchpad : AppIntro2() {
 
         // Set in immersive mode
         //setImmersiveMode() // Blocking UI
+
         // Fade the screens!!!!!!
         setTransformer(AppIntroPageTransformerType.Fade)
+
         // Some other settings
         isSystemBackButtonLocked = true
         showStatusBar(false)
 
         // First Intro slide - About slide
         addSlide(f1)
+
         // Second Intro slide - App info slide
         addSlide(f2)
+
         // Third Intro slide - Permission slide 1 for PACKAGE_USAGE_STATS permission
         addSlide(f3)
+
         // Fourth Intro slide - Permission slide 2 for SYSTEM_ALERT_WINDOW permission
         addSlide(f4)
+
         // Final Login info slide
         addSlide(f5)
 
     }
 
+    /**
+     * Handle when Skip button is pressed. This usually takes to the login segment
+     */
     override fun onSkipPressed(currentFragment: Fragment?) {
         super.onSkipPressed(currentFragment)
         fin()
         //startActivity(Intent(this, Home::class.java))
-        finish()
     }
 
+    /**
+     * Handle when Done button is pressed. This usually finishes the activity and takes to the login segment
+     */
     override fun onDonePressed(currentFragment: Fragment?) {
         super.onDonePressed(currentFragment)
         fin()
-        finish()
     }
 
-    fun fin() {
-        startActivity(Intent(this, ProfileMaker::class.java))
-    }
-
+    /**
+     * Handle the transaction of fragment views. This method is triggered when the fragments are changed
+     */
     override fun onSlideChanged(oldFragment: Fragment?, newFragment: Fragment?) {
         super.onSlideChanged(oldFragment, newFragment)
         when (newFragment) {
@@ -101,6 +136,9 @@ class Launchpad : AppIntro2() {
         }
     }
 
+    /**
+     * Handle Request Permission for reading application statistics
+     */
     private fun requestStatsPermission() {
         if (Helper().tryGetPermission(this)) {
             Toast.makeText(applicationContext, R.string.toast_grant_permission, Toast.LENGTH_LONG)
@@ -110,6 +148,9 @@ class Launchpad : AppIntro2() {
         }
     }
 
+    /**
+     * Handle Request Permission for displaying overlays. This is needed to show the alert dialogs via service
+     */
     private fun requestOverlayPermission() {
         if (!Settings.canDrawOverlays(this)) {
             Toast.makeText(applicationContext, R.string.toast_grant_permission, Toast.LENGTH_LONG)
@@ -121,5 +162,15 @@ class Launchpad : AppIntro2() {
             startActivityForResult(intent, 0)
         }
     }
+
+    /**
+     * Starts the ProfileMaker class and closes the activity.
+     * This task was repeating so just make a function to handle it
+     */
+    private fun fin() {
+        startActivity(Intent(this, ProfileMaker::class.java))
+        finish()
+    }
+
 
 }
