@@ -84,8 +84,8 @@ class MakeProfile : Fragment() {
         imageButton = root.findViewById<ImageButton>(R.id.pictureProfile)
 
         // Set array adapter for gender spinner
-        ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, genders).also {
-            it.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        ArrayAdapter(requireContext(), R.layout.spinner_profile, genders).also {
+            //it.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
             gender.adapter = it
         }
 

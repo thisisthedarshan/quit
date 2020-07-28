@@ -77,7 +77,7 @@ class Launchpad : AppIntro2() {
         f5 = IntroMake.newInstance(
             "\uD83C\uDF89",
             "Let's begin our fabulous journey !",
-            Color.WHITE, Color.BLACK,
+            Color.TRANSPARENT, Color.BLACK,
             R.drawable.begin_screen, R.drawable.ic_done
         )
 
@@ -144,7 +144,7 @@ class Launchpad : AppIntro2() {
             Toast.makeText(applicationContext, R.string.toast_grant_permission, Toast.LENGTH_LONG)
                 .show()
             val intent = Intent(Settings.ACTION_USAGE_ACCESS_SETTINGS)
-            startActivity(intent)
+            startActivityForResult(intent,1)
         }
     }
 

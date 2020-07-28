@@ -44,10 +44,6 @@ class SplashScreen : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash_screen)
 
-        // Check if service is active or not
-        // Start the job
-        startJob()
-
         // Add the intent filter to register Boot Receiver
         val intentBoot = IntentFilter(Intent.ACTION_BOOT_COMPLETED)
         registerReceiver(BootReceiver(),intentBoot)
@@ -61,6 +57,8 @@ class SplashScreen : AppCompatActivity() {
             val account = GoogleSignIn.getLastSignedInAccount(this)
             if (account != null) {
                 startActivity(Intent(this, Home::class.java))
+                // Start the job only if signed-in
+                startJob()
             } else {
                 startActivity(Intent(this, Launchpad::class.java))
             }
