@@ -11,16 +11,13 @@ android:
     - extra-google-google_play_services
     - extra-google-m2repository
     - extra-android-m2repository
-    - build-tools-25.0.0
-    - android-24
-    - sys-img-armeabi-v7a-android-24
+    - build-tools-26.0.2
+    - android-26
+    - sys-img-x86-android-26
 before_install:
-  - yes | sdkmanager "platforms;android-24"
-#  - yes | sdkmanager "platforms;android-27"
-#  - yes | sdkmanager "platforms;android-28"
   - pip install --user codecov
 before_script:
-  - echo no | android create avd --force -n test -t android-24
+  - echo no | android create avd --force -n test -t android-26
 #  - echo no | android create avd --name test --package "system-images;android-24;default;armeabi-v7a"
   - emulator -avd test -no-audio -no-window &
   - android-wait-for-emulator
