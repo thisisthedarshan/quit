@@ -14,7 +14,7 @@ android:
     - extra-android-m2repository
     - build-tools-25.0.0
     - android-25
-    - sys-img-armeabi-v7a-android-23
+    - sys-img-armeabi-v7a-android-25
 before_install:
   - yes | sdkmanager "platforms;android-27"
   - yes | sdkmanager "platforms;android-28"
