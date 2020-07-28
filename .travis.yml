@@ -31,7 +31,9 @@ before_script:
 
 
 script:
-  - ./gradlew build check
+  - #./gradlew build check
+  - ./gradlew jacocoTestReport
+  - ./gradlew connectedCheck
   - bash <(curl -s https://codecov.io/bash) -t 43491081-a94f-4ce6-8688-5724d791ae79
 
 after_success:
