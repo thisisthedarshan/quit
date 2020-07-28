@@ -1,33 +1,19 @@
 language: android
 jdk: oraclejdk8
 dist: trusty
-#sudo: required
 group: edge
 android:
   components:
-    - tools
     - tools
     - platform-tools
     - extra-google-google_play_services
     - extra-google-m2repository
     - extra-android-m2repository
-    - build-tools-25.0.2
-    - android-25
-    - sys-img-armeabi-v7a-android-24
+    - build-tools-29.0.3
+    - android-29
 before_install:
   - pip install --user codecov
-  - sdkmanager tools
-  - sdkmanager "system-images;android-24;default;armeabi-v7a"
-  - echo no | avdmanager create avd --force -n buildtest -k "system-images;android-24;default;armeabi-v7a"
-  - $ANDROID_HOME/emulator/emulator -avd buildtest -no-audio -nowindow &
-before_script:
-#  - echo no | android create avd --force -n test -t android-26
-#  - echo no | android create avd --name test --package "system-images;android-24;default;armeabi-v7a"
-#  - emulator -avd test -no-audio -no-window &
-  - android-wait-for-emulator
-  - adb shell input keyevent 82 &
 script:
-  - #./gradlew build check
   - ./gradlew jacocoTestReport
   - ./gradlew connectedCheck
   - bash <(curl -s https://codecov.io/bash) 
