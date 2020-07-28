@@ -31,7 +31,7 @@ before_script:
 before_install:
   - pip install --user codecov
 script:
-  - ./gradlew jacocoTestReport
+  - ./gradlew build jacocoTestReport assembleAndroidTest
   - ./gradlew connectedCheck
   - bash <(curl -s https://codecov.io/bash) 
 after_success:
