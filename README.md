@@ -30,7 +30,7 @@ You can find the latest releases [here](https://github.com/thisisthedarshan/quit
 
 Support Me by donating.
 
- [![liberapay](https://img.shields.io/badge/-Support-0F7816?logo=liberapay)](https://liberapay.com/darshan/donate) [![paypal](https://img.shields.io/badge/-Support-0F7816?logo=paypal)](https://paypal.me/thisisdarshan) <a href='https://ko-fi.com/X8X51ZF9Y' target='_blank'><img height='21' style='border:0px;height:21px;' src='https://cdn.ko-fi.com/cdn/kofi4.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+ [![liberapay](https://img.shields.io/badge/-Support-0F7816?logo=liberapay)](https://liberapay.com/darshan/donate) [![paypal](https://img.shields.io/badge/-Support-0F7816?logo=paypal)](https://paypal.me/thisisdarshan) <a href='https://ko-fi.com/X8X51ZF9Y' target='_blank'><img height='21' style='border:0px;height:21px;' src='https://www.ko-fi.com/img/githubbutton_sm.svg' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
 
 ## Screenshots ◖⚆ᴥ⚆◗
 
