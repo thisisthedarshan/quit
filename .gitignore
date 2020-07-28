@@ -17,3 +17,4 @@
 *.apk
 .idea/copyright/FOSS.xml
 .idea/copyright/profiles_settings.xml
+app/release/output-metadata.json
