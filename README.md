@@ -1,6 +1,6 @@
 # Quit - The only FOSS Habit Monitor
 
-![in](https://img.shields.io/badge/Made%20with%20%F0%9F%92%97%20in%20-INDIA-green) ![l](https://img.shields.io/github/license/thisisthedarshan/quit) ![ak](https://kotlin.link/awesome-kotlin.svg) [![Build Status](https://travis-ci.com/thisisthedarshan/quit.svg?branch=master)](https://travis-ci.com/thisisthedarshan/quit) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/857b4ed9798942bcac8386c9bbd356ef)](https://www.codacy.com/manual/thisisthedarshan/quit?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=thisisthedarshan/quit&amp;utm_campaign=Badge_Grade) <!--[![codebeat badge](https://codebeat.co/badges/548cc719-c17e-48fd-8261-6ecc8a51a7e7)](https://codebeat.co/projects/github-com-thisisthedarshan-quit-master)-->
+![in](https://img.shields.io/badge/Made%20with%20%F0%9F%92%97%20in%20-INDIA-green) [![l](https://img.shields.io/github/license/thisisthedarshan/quit)](https://github.com/thisisthedarshan/quit/blob/master/LICENSE) ![ak](https://kotlin.link/awesome-kotlin.svg) [![Build Status](https://travis-ci.com/thisisthedarshan/quit.svg?branch=master)](https://travis-ci.com/thisisthedarshan/quit) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/857b4ed9798942bcac8386c9bbd356ef)](https://www.codacy.com/manual/thisisthedarshan/quit?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=thisisthedarshan/quit&amp;utm_campaign=Badge_Grade)
 
 ![header](./images/quit_feature_graphic.png)
 
@@ -15,6 +15,12 @@ The features of the app include:
 * Periodic reminder
 * Motivational Notifications
 * Recommendations *and much more...*
+  
+## Release U(⁎˃ᆺ˂)U
+
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/thisisthedarshan/quit)](https://github.com/thisisthedarshan/quit/releases/latest)
+
+You can find the latest release [here](https://github.com/thisisthedarshan/quit/releases/latest). Just download and install the APK file.
 
 ## Development ( ˘▽˘)っ♨
 
@@ -22,9 +28,11 @@ Any improvements and suggestions are appreciated. You are free to improve or con
 
  [![Gitter](https://badges.gitter.im/itsDlabs/community.svg)](https://gitter.im/itsDlabs/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
-## Release U(⁎˃ᆺ˂)U
+## Status (；￢＿￢)
 
-You can find the latest releases [here](https://github.com/thisisthedarshan/quit/releases). Just download and install the APK file.
+The current status is
+
+[![GitHub issues](https://img.shields.io/github/issues-raw/thisisthedarshan/quit?color=critical)](https://github.com/thisisthedarshan/quit/issues?q=is%3Aopen) [![GitHub closed issues](https://img.shields.io/github/issues-closed-raw/thisisthedarshan/quit?color=success)](https://github.com/thisisthedarshan/quit/issues?q=is%3Aissue+is%3Aclosed) ![GitHub All Releases](https://img.shields.io/github/downloads/thisisthedarshan/quit/total) ![GitHub contributors](https://img.shields.io/github/contributors/thisisthedarshan/quit) ![GitHub last commit](https://img.shields.io/github/last-commit/thisisthedarshan/quit) ![GitHub Release Date](https://img.shields.io/github/release-date/thisisthedarshan/quit)
 
 ## Support ╭( ･ㅂ･)و ̑̑
 
@@ -38,4 +46,4 @@ Support Me by donating.
 
 ## License (^ᴥ^)
 
-The application is distributed under the GNU GPL v3 license. You can read about it [here](http://www.gnu.org/licenses/gpl-3.0.en.html)
+The application is distributed under the [GNU GPL v3](http://www.gnu.org/licenses/gpl-3.0.en.html) license. You can read it [here](https://github.com/thisisthedarshan/quit/blob/master/LICENSE) .
